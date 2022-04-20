@@ -1,6 +1,6 @@
 #
 #	This file is part of the OrangeFox Recovery Project
-# 	Copyright (C) 2018-2021 The OrangeFox Recovery Project
+# 	Copyright (C) 2018-2022 The OrangeFox Recovery Project
 #	
 #	OrangeFox is free software: you can redistribute it and/or modify
 #	it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ if [ -z "$1" -a -z "$FOX_BUILD_DEVICE" ]; then
    FOX_BUILD_DEVICE=$(fox_get_target_device)
 fi
 
-FDEVICE="santoni"
+FDEVICE="E"
 
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
    	export TW_DEFAULT_LANGUAGE="en"
@@ -46,7 +46,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_XZ_UTILS="1"
    	export FOX_REPLACE_BUSYBOX_PS="1"
    	export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER="1"
-   	export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/bootdevice/by-name/cust"
+   	export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/bootdevice/by-name/vendor"
    	export OF_CHECK_OVERWRITE_ATTEMPTS="1"
    	export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES="1"
    	export OF_USE_MAGISKBOOT="1"
@@ -54,8 +54,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
    	export OF_NO_MIUI_OTA_VENDOR_BACKUP="1"
    	export OF_NO_TREBLE_COMPATIBILITY_CHECK="1"
 	export OF_USE_SYSTEM_FINGERPRINT="1"
-   	export OF_MAINTAINER=Jabiyeff
-   	export OF_MAINTAINER_AVATAR="/home/jabiyeff/ofrp/device/xiaomi/santoni/addon/avatar.png"
+   	export OF_MAINTAINER=popoASM
    	export LC_ALL="C"
    	export ALLOW_MISSING_DEPENDENCIES=true
 	export OF_SKIP_DECRYPTED_ADOPTED_STORAGE="1"
@@ -75,9 +74,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
         export OF_DISABLE_MIUI_OTA_BY_DEFAULT="1"
         export OF_QUICK_BACKUP_LIST="/system_root;/vendor;/data;/persist;/boot;"
         # -- end R11 settings --
-
-        # use magisk 23.0 for the magisk addon
-        export FOX_USE_SPECIFIC_MAGISK_ZIP="/home/jabiyeff/ofrp/device/xiaomi/santoni/addon/Magisk-24.1.zip"
 
         # -- Enable CCACHE --
         export USE_CCACHE=1
